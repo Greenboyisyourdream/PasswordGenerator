@@ -5,16 +5,11 @@ from gui import window, screen
 
 while True:
     button, value = window.read()
-    lenght = value["LEN"]
-    symbols = ''
-    if value["H"]:
-        symbols += ascii_uppercase
-    if value["L"]:
-        symbols += ascii_lowercase
-    if value["D"]:
-        symbols += digits
-    if value["S"]:
-        symbols += '!@#$%^&*()<>?|+=-.'
+    lenght = int(value["LEN"])
+    symbol_choices = {'H': ascii_uppercase, "L": ascii_lowercase, "D": digits, "S": "!@#$%^&*()<>?/|+=-."}
+    symbols = ''.join(v for k, v in symbol_choices.items() if value[k])
+    if button in [None, "Quit"]:
+        break
     elif button == "Generate!":
         try:
             screen.format()
