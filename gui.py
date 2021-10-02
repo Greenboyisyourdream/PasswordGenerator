@@ -1,6 +1,6 @@
 import PySimpleGUI as gui
 
-screen = ""
+screen = ''
 
 layout = [
     [gui.Text(text='Password generator', background_color="#900C3F", font=("Digital-7", 12),
@@ -18,7 +18,3 @@ layout = [
 ]
 
 window = gui.Window("Password generator", layout=layout, background_color="#900C3F", size=(420, 100))
-button, value = window.read()
-
-symbols = []
-lenght = value["LEN"]
