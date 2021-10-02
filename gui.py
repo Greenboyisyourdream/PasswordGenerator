@@ -1,7 +1,5 @@
 import PySimpleGUI as gui
 
-screen = ''
-
 layout = [
     [gui.Text(text='Password generator', background_color="#900C3F", font=("Digital-7", 12),
               justification='left'),
@@ -12,7 +10,7 @@ layout = [
      gui.Checkbox(text="Digits", background_color="#900C3F", default=False, key="D"),
      gui.Checkbox(text="Spec. symbols", background_color="#900C3F", default=False, key="S"), ],
 
-    [gui.InputText(screen, size=(50, 1), font=("Times New Roman", 10), background_color="white", text_color="black",
+    [gui.InputText("", size=(50, 1), font=("Times New Roman", 10), background_color="white", text_color="black",
               key="output"), gui.Button(button_text="Generate!", size=(10, 1), button_color="red")]
 
 ]
