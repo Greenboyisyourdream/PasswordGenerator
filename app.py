@@ -3,32 +3,31 @@ from string import ascii_lowercase, ascii_uppercase, digits
 
 from gui import window, screen
 
-
 while True:
-    symbols = []
+    symbols = set()
     button, value = window.read()
     lenght = value["LEN"]
     if button in [None, "Quit"]:
         break
     elif button == "Generate!":
         screen.format()
-        screen = str(*[random.choice(symbols) for _ in range(lenght)])
+        screen = str(*[random.choice(list(symbols)) for _ in range(lenght)])
         window.FindElement("output").Update(screen)
     elif value["H"]:
-        symbols.extend([str(i) for i in ascii_uppercase])
+        symbols.union(ascii_uppercase)
     elif value["H"] is False:
-        symbols.remove([str(i) for i in ascii_uppercase])
+        symbols.intersection(ascii_uppercase)
     elif value["L"]:
-        symbols.extend([str(i) for i in ascii_lowercase])
+        symbols.union(ascii_lowercase)
     elif value["L"] is False:
-        symbols.remove([str(i) for i in ascii_lowercase])
+        symbols.intersection(ascii_lowercase)
     elif value["D"]:
-        symbols.extend([str(i) for i in digits])
+        symbols.union(digits)
     elif value["D"] is False:
-        symbols.remove([str(i) for i in digits])
+        symbols.intersection(digits)
     elif value["S"]:
-        symbols.extend(
+        symbols.union(
             ["!", "@", "#", '$', '%', '^', '&', '*', '(', ')', '<', '>', '?', '/', '|', "_", "+", "=", "-", "."])
     elif value["S"] is False:
-        symbols.remove(
+        symbols.intersection(
             ["!", "@", "#", '$', '%', '^', '&', '*', '(', ')', '<', '>', '?', '/', '|', "_", "+", "=", "-", "."])

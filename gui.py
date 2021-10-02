@@ -6,7 +6,7 @@ layout = [
     [gui.Text(text='Password generator', background_color="#900C3F", font=("Digital-7", 12),
               justification='left'),
      gui.Text(text="Lenght password:", background_color="#900C3F"),
-     gui.OptionMenu(size=(3, 10), values=([i for i in range(1, 17)]), default_value=8, key="LEN")],
+     gui.OptionMenu(size=(3, 10), values=([i for i in range(1, 37)]), default_value=8, key="LEN")],
     [gui.Checkbox(text="High letters", background_color="#900C3F", default=True, key="H"),
      gui.Checkbox(text="Low letters", background_color="#900C3F", default=True, key="L"),
      gui.Checkbox(text="Digits", background_color="#900C3F", default=True, key="D"),
