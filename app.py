@@ -1,7 +1,7 @@
 import random
 from string import ascii_lowercase, ascii_uppercase, digits
 
-from gui import window, screen
+from gui import window
 
 while True:
     button, value = window.read()
