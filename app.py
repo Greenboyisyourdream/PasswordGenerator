@@ -11,10 +11,5 @@ while True:
     if button in [None, "Quit"]:
         break
     elif button == "Generate!":
-        try:
-            screen.format()
-            screen = "".join(random.choices(list(symbols), k=int(lenght)))
-            window.FindElement("output").Update(screen)
-        except IndexError:
-            screen = "Please select generation settings ↑"
-            window.FindElement("output").Update(screen)
+        screen = "".join(random.choices(symbols, k=lenght)) if symbols else "Please select generation settings ↑"
+        window.FindElement("output").Update(screen)
