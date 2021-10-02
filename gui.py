@@ -7,7 +7,7 @@ layout = [
               justification='left'),
      gui.Text(text="Lenght password:", background_color="#900C3F"),
      gui.OptionMenu(size=(3, 10), values=([i for i in range(1, 28)]), default_value=8, key="LEN")],
-    [gui.Checkbox(text="High letters", background_color="#900C3F", default=True, key="H"),
+    [gui.Checkbox(text="High letters", background_color="#900C3F", default=False, key="H"),
      gui.Checkbox(text="Low letters", background_color="#900C3F", default=False, key="L"),
      gui.Checkbox(text="Digits", background_color="#900C3F", default=False, key="D"),
      gui.Checkbox(text="Spec. symbols", background_color="#900C3F", default=False, key="S"), ],
