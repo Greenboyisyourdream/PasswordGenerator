@@ -12,7 +12,7 @@ layout = [
      gui.Checkbox(text="Digits", background_color="#900C3F", default=True, key="D"),
      gui.Checkbox(text="Spec. symbols", background_color="#900C3F", default=False, key="S"), ],
 
-    [gui.Text(screen, size=(40, 1), font=("Times New Roman", 10), background_color="white", text_color="black",
+    [gui.InputText(screen, size=(40, 1), font=("Times New Roman", 10), background_color="white", text_color="black",
               key="output"), gui.Button(button_text="Generate!", size=(10, 1), button_color="red", key="output")]
 
 ]

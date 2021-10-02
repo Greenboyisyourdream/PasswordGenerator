@@ -1,12 +1,15 @@
 import random
 from string import ascii_lowercase, ascii_uppercase, digits
 
-from gui import window, symbols, lenght, screen
+from gui import window, symbols, lenght
 
 while True:
     button, value = window.read()
     if button in [None, "Quit"]:
         break
+    elif button == "Generate!":
+        screen = str(*[random.choice(symbols) for _ in range(lenght)])
+        window.FindElement("output").Update(screen)
     elif value["H"]:
         symbols.extend([str(i) for i in ascii_uppercase])
     elif value["H"] is False:
@@ -25,6 +28,3 @@ while True:
     elif value["S"] is False:
         symbols.remove(
             ["!", "@", "#", '$', '%', '^', '&', '*', '(', ')', '<', '>', '?', '/', '|', "_", "+", "=", "-", "."])
-    elif button == "Generate!":
-        screen = str(*[random.choice(symbols) for _ in range(lenght)])
-        window.FindElement("output").Update(screen)
